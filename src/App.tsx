@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { useLenis } from '@/hooks/useLenis';
 import { VerticalGuides } from '@/components/common/VerticalGuides';
+import { DigexaPreloader } from '@/components/common/DigexaPreloader';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { HomePage } from '@/pages/HomePage';
@@ -36,6 +37,7 @@ export const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ScrollToTopOnNavigate />
+      <DigexaPreloader />
       <div className="min-h-screen bg-black text-white relative flex flex-col selection:bg-[#FF0000]/30 selection:text-white">
         {/* Subtle vertical architectural guide lines */}
         <VerticalGuides />
