@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: #07070a;
+    --color-foreground: #f7f8f8;
+  }
+
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  html {
+    color-scheme: dark;
+    background-color: #07070a;
+    color: #f7f8f8;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: #07070a;
+    overflow-x: hidden;
+  }
+
+  /* Lenis smooth scrolling classes */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #07070a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(15, 16, 22, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 24px rgba(0, 242, 254, 0.4);
+  }
+
+  .text-glow-violet {
+    text-shadow: 0 0 24px rgba(127, 0, 255, 0.4);
+  }
+
+  .bg-radial-vignette {
+    background: radial-gradient(circle at 50% 0%, rgba(24, 27, 45, 0.6) 0%, rgba(7, 7, 10, 0.95) 75%);
+  }
+
+  .bg-grid-pattern {
+    background-size: 48px 48px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+
+  /* Vampior Designs Project Showcase Image Hover Interaction */
+  .project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.6s ease;
+  }
+
+  .project-item:hover .project-image {
+    filter: grayscale(0%);
+  }
+
+  /* Seamless Crossing Technology Ribbon Marquee */
+  @keyframes marquee-scroll-left {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @keyframes marquee-scroll-right {
+    0% {
+      transform: translate3d(-50%, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .animate-marquee-left {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll-left 30s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-marquee-right {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll-right 30s linear infinite;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee-left,
+    .animate-marquee-right {
+      animation-play-state: paused;
+    }
+  }
+
+  /* Cinematic Red Smoke Drift Animation */
+  @keyframes cinematic-smoke {
+    0% {
+      transform: translate3d(-25px, -10px, 0) rotate(-3deg) scale(1.12);
+    }
+    50% {
+      transform: translate3d(15px, 6px, 0) rotate(1deg) scale(1.18);
+    }
+    100% {
+      transform: translate3d(25px, 10px, 0) rotate(3deg) scale(1.15);
+    }
+  }
+
+  .animate-smoke-flow {
+    animation: cinematic-smoke 22s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-smoke-flow {
+      animation: none;
+      transform: scale(1.1);
+    }
+  }
+
+  /* DIGEXA Preloader Reverse Logo Assembly (Right to Left: A -> X -> E -> G -> I -> D -> Symbol) */
+  @keyframes preloader-rtl-assembly {
+    0% {
+      clip-path: inset(0 0 0 100%);
+      opacity: 0;
+    }
+    2% {
+      clip-path: inset(0 0 0 100%);
+      opacity: 1;
+    }
+    /* Letter 'A' revealed (x: 292 to 335) */
+    16% {
+      clip-path: inset(0 0 0 85.5%);
+    }
+    /* Letter 'X' revealed (x: 256 to 292) -> 'XA' visible */
+    32% {
+      clip-path: inset(0 0 0 75.0%);
+    }
+    /* Letter 'E' revealed (x: 214 to 256) -> 'EXA' visible */
+    48% {
+      clip-path: inset(0 0 0 62.4%);
+    }
+    /* Letter 'G' revealed (x: 167 to 209) -> 'GEXA' visible */
+    64% {
+      clip-path: inset(0 0 0 48.5%);
+    }
+    /* Letter 'I' revealed (x: 154 to 164) -> 'IGEXA' visible */
+    76% {
+      clip-path: inset(0 0 0 44.5%);
+    }
+    /* Letter 'D' revealed (x: 101 to 150) -> 'DIGEXA' visible */
+    88% {
+      clip-path: inset(0 0 0 25.0%);
+    }
+    /* Symbol revealed (x: 0 to 76) -> Complete Brand Mark */
+    100% {
+      clip-path: inset(0 0 0 0%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes preloader-logo-glow {
+    0% {
+      filter: drop-shadow(0 0 0px rgba(255, 23, 23, 0));
+    }
+    50% {
+      filter: drop-shadow(0 0 30px rgba(255, 23, 23, 0.45)) drop-shadow(0 0 45px rgba(255, 255, 255, 0.25));
+    }
+    100% {
+      filter: drop-shadow(0 0 16px rgba(255, 23, 23, 0.3));
+    }
+  }
+
+  .animate-preloader-assembly {
+    animation: preloader-rtl-assembly 1.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    will-change: clip-path, opacity;
+  }
+
+  .animate-preloader-glow {
+    animation: preloader-logo-glow 0.6s ease-in-out forwards;
+    will-change: filter;
+  }
+
+  /* Services continuous horizontal slider (40s infinite loop) */
+  @keyframes services-slider-scroll {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .animate-services-slider {
+    display: flex;
+    width: max-content;
+    animation: services-slider-scroll 40s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-services-slider:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-services-slider {
+      animation-play-state: paused;
+    }
+  }
+}
+
+
