@@ -14,8 +14,8 @@ export const Footer: React.FC = () => {
         ========================================================================
         1. LAYERED RED SMOKE BACKGROUND WITH CINEMATIC FLOW
         Layer 1: Deep black base background (#050505)
-        Layer 2: Animated red smoke image layer (visible, vibrant, 22s drift)
-        Layer 3: Subtle dark overlay for readability (never covers the smoke)
+        Layer 2: Animated red smoke image layer (controlled & subdued on mobile, vibrant on desktop)
+        Layer 3: Dark overlay for readability (80% black veil on mobile, gradient on desktop)
         ========================================================================
       */}
       {/* Layer 2: Animated Red Smoke */}
@@ -27,14 +27,14 @@ export const Footer: React.FC = () => {
           src={aboutRedSmoke}
           alt=""
           loading="lazy"
-          className="w-full h-full object-cover object-center opacity-85 mix-blend-screen filter saturate-150 contrast-125 animate-smoke-flow"
+          className="w-full h-full object-cover object-center opacity-40 md:opacity-85 mix-blend-screen filter saturate-100 md:saturate-150 contrast-110 md:contrast-125 animate-smoke-flow"
         />
       </div>
 
-      {/* Layer 3: Subtle Dark Overlay for Text Readability */}
+      {/* Layer 3: Dark Overlay for Text Readability */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-black/25 to-black/60 select-none"
+        className="pointer-events-none absolute inset-0 z-[1] bg-black/80 md:bg-gradient-to-t md:from-black/60 md:via-black/25 md:to-black/60 select-none"
       />
 
       {/* 
@@ -42,10 +42,10 @@ export const Footer: React.FC = () => {
         Layer 4: Footer Foreground Content
         ========================================================================
       */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-[22px] sm:px-10 lg:px-16 pt-12 sm:pt-20 lg:pt-24 pb-8 sm:pb-12">
         {/* Main Body: LEFT (PING US Circle) & RIGHT (Two-column, two-row info grid) */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 sm:gap-16 lg:gap-24 pb-16 lg:pb-20">
-
+        <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-10 sm:gap-16 lg:gap-24 pb-12 sm:pb-16 lg:pb-20">
+          
           {/* 
             ====================================================================
             LEFT SIDE — PING US Circle
@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
           */}
           <div className="w-full lg:w-auto flex justify-center lg:justify-start shrink-0">
             <a
-              href="mailto:hello@digexa.agency"
+              href="mailto:infodigexa@gmail.com"
               className="group relative aspect-square w-[240px] xs:w-[270px] sm:w-[320px] lg:w-[395px] rounded-full bg-[#FF0000] flex flex-col items-center justify-center overflow-hidden cursor-pointer shadow-[0_0_30px_rgba(255,0,0,0.35)] focus:outline-none focus-visible:ring-4 focus-visible:ring-white transition-all duration-300 select-none shrink-0"
               aria-label="Ping DIGEXA - Contact via email"
             >
@@ -89,28 +89,28 @@ export const Footer: React.FC = () => {
             Clean two-column, two-row information grid.
             - No vertical divider separating from the circle
             - No internal horizontal dividers
-            - Generous spacing, small muted uppercase labels
+            - Generous spacing, high-contrast readable labels & links
             ====================================================================
           */}
-          <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-14 lg:gap-16">
-
+          <div className="w-full flex-1 grid grid-cols-1 sm:grid-cols-2 gap-9 sm:gap-14 lg:gap-16">
+            
             {/* COLUMN 1: SOCIAL MEDIA & USEFUL LINKS */}
-            <div className="flex flex-col justify-between space-y-10 sm:space-y-12">
+            <div className="flex flex-col justify-between space-y-9 sm:space-y-12">
               {/* SOCIAL MEDIA */}
-              <div className="space-y-3 sm:space-y-4">
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#888888] font-semibold block">
+              <div className="space-y-3 sm:space-y-3.5">
+                <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#B8B8B8] md:text-[#888888] font-semibold block mb-3.5 sm:mb-4">
                   SOCIAL MEDIA
                 </span>
-                <ul className="space-y-2.5 text-sm font-sans tracking-wide">
+                <ul className="space-y-3 sm:space-y-3.5 text-[15px] sm:text-sm font-sans tracking-wide leading-relaxed">
                   <li>
                     <a
                       href="https://twitter.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/80 hover:text-[#FF0000] transition-colors inline-flex items-center gap-2 group"
+                      className="text-[#FFFFFF] md:text-white/80 hover:text-[#FF0000] transition-colors inline-flex items-center gap-2 group"
                     >
                       <span>Twitter / X</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#E50914] opacity-90 md:opacity-50 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                   <li>
@@ -118,10 +118,10 @@ export const Footer: React.FC = () => {
                       href="https://linkedin.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/80 hover:text-[#FF0000] transition-colors inline-flex items-center gap-2 group"
+                      className="text-[#FFFFFF] md:text-white/80 hover:text-[#FF0000] transition-colors inline-flex items-center gap-2 group"
                     >
                       <span>LinkedIn</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#E50914] opacity-90 md:opacity-50 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                   <li>
@@ -129,10 +129,10 @@ export const Footer: React.FC = () => {
                       href="https://instagram.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/80 hover:text-[#FF0000] transition-colors inline-flex items-center gap-2 group"
+                      className="text-[#FFFFFF] md:text-white/80 hover:text-[#FF0000] transition-colors inline-flex items-center gap-2 group"
                     >
                       <span>Instagram</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#E50914] opacity-90 md:opacity-50 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                   <li>
@@ -140,38 +140,38 @@ export const Footer: React.FC = () => {
                       href="https://dribbble.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/80 hover:text-[#FF0000] transition-colors inline-flex items-center gap-2 group"
+                      className="text-[#FFFFFF] md:text-white/80 hover:text-[#FF0000] transition-colors inline-flex items-center gap-2 group"
                     >
                       <span>Dribbble</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#E50914] opacity-90 md:opacity-50 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
                 </ul>
               </div>
 
               {/* USEFUL LINKS */}
-              <div className="space-y-3 sm:space-y-4">
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#888888] font-semibold block">
+              <div className="space-y-3 sm:space-y-3.5">
+                <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#B8B8B8] md:text-[#888888] font-semibold block mb-3.5 sm:mb-4">
                   USEFUL LINKS
                 </span>
-                <ul className="space-y-2.5 text-sm font-sans tracking-wide">
+                <ul className="space-y-3 sm:space-y-3.5 text-[15px] sm:text-sm font-sans tracking-wide leading-relaxed">
                   <li>
-                    <Link to="/" className="text-white/80 hover:text-white transition-colors">
+                    <Link to="/" className="text-[#FFFFFF] md:text-white/80 hover:text-white transition-colors">
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link to="/contact" className="text-white/80 hover:text-white transition-colors">
+                    <Link to="/contact" className="text-[#FFFFFF] md:text-white/80 hover:text-white transition-colors">
                       Contact
                     </Link>
                   </li>
                   <li>
-                    <Link to="/about" className="text-white/80 hover:text-white transition-colors">
+                    <Link to="/about" className="text-[#FFFFFF] md:text-white/80 hover:text-white transition-colors">
                       About DIGEXA
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services" className="text-white/80 hover:text-white transition-colors">
+                    <Link to="/services" className="text-[#FFFFFF] md:text-white/80 hover:text-white transition-colors">
                       Our Services
                     </Link>
                   </li>
@@ -180,61 +180,61 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* COLUMN 2: CONTACT INFO & MORE INFO */}
-            <div className="flex flex-col justify-between space-y-10 sm:space-y-12">
+            <div className="flex flex-col justify-between space-y-9 sm:space-y-12">
               {/* CONTACT INFO */}
-              <div className="space-y-3 sm:space-y-4">
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#888888] font-semibold block">
+              <div className="space-y-3 sm:space-y-3.5">
+                <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#B8B8B8] md:text-[#888888] font-semibold block mb-3.5 sm:mb-4">
                   CONTACT INFO
                 </span>
-                <ul className="space-y-3 text-sm font-sans">
+                <ul className="space-y-3 sm:space-y-3.5 text-[15px] sm:text-sm font-sans leading-relaxed">
                   <li>
                     <a
-                      href="mailto:hello@digexa.agency"
-                      className="text-white/80 hover:text-white transition-colors inline-flex items-center gap-2.5 group"
+                      href="mailto:infodigexa@gmail.com"
+                      className="text-[#F1F1F1] md:text-white/80 hover:text-white transition-colors inline-flex items-center gap-2.5 group"
                     >
-                      <Mail className="w-4 h-4 text-[#FF0000] shrink-0" />
-                      <span>hello@digexa.agency</span>
+                      <Mail className="w-4 h-4 text-[#E50914] shrink-0" />
+                      <span>infodigexa@gmail.com</span>
                     </a>
                   </li>
                   <li>
                     <a
                       href="tel:+94766414622"
-                      className="text-white/80 hover:text-white transition-colors inline-flex items-center gap-2.5 font-mono group"
+                      className="text-[#F1F1F1] md:text-white/80 hover:text-white transition-colors inline-flex items-center gap-2.5 font-mono group"
                     >
-                      <Phone className="w-4 h-4 text-[#FF0000] shrink-0" />
+                      <Phone className="w-4 h-4 text-[#E50914] shrink-0" />
                       <span>+94 76 641 4622</span>
                     </a>
                   </li>
-                  <li className="flex items-center gap-2.5 text-white/70">
-                    <MapPin className="w-4 h-4 text-[#FF0000] shrink-0" />
+                  <li className="flex items-center gap-2.5 text-[#F1F1F1] md:text-white/70">
+                    <MapPin className="w-4 h-4 text-[#E50914] shrink-0" />
                     <span>Colombo, Sri Lanka / Global Remote</span>
                   </li>
                 </ul>
               </div>
 
               {/* MORE INFO */}
-              <div className="space-y-3 sm:space-y-4">
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#888888] font-semibold block">
+              <div className="space-y-3 sm:space-y-3.5">
+                <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#B8B8B8] md:text-[#888888] font-semibold block mb-3.5 sm:mb-4">
                   MORE INFO
                 </span>
-                <ul className="space-y-2.5 text-sm font-sans tracking-wide">
+                <ul className="space-y-3 sm:space-y-3.5 text-[15px] sm:text-sm font-sans tracking-wide leading-relaxed">
                   <li>
-                    <Link to="/services" className="text-white/80 hover:text-white transition-colors">
+                    <Link to="/services" className="text-[#D0D0D0] md:text-white/80 hover:text-white transition-colors">
                       Services
                     </Link>
                   </li>
                   <li>
-                    <Link to="/projects" className="text-white/80 hover:text-white transition-colors">
+                    <Link to="/projects" className="text-[#D0D0D0] md:text-white/80 hover:text-white transition-colors">
                       Projects
                     </Link>
                   </li>
                   <li>
-                    <span className="text-white/50 cursor-default">
+                    <span className="text-[#D0D0D0] md:text-white/50 cursor-default">
                       Brand Strategy
                     </span>
                   </li>
                   <li>
-                    <span className="text-white/50 cursor-default">
+                    <span className="text-[#D0D0D0] md:text-white/50 cursor-default">
                       Web Development
                     </span>
                   </li>
@@ -253,7 +253,7 @@ export const Footer: React.FC = () => {
           Right: Privacy Policy | Terms & Conditions
           ======================================================================
         */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#777777]">
+        <div className="pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs font-mono text-[#AAAAAA] md:text-[#777777]">
           <div>
             <span>Copyright © 2026 DIGEXA. All rights reserved.</span>
           </div>

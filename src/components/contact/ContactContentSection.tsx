@@ -257,11 +257,11 @@ export const ContactContentSection: React.FC = () => {
             {/* Right Information: 15–16px */}
             <div className="w-full md:w-2/3 md:text-right flex flex-col md:items-end justify-center space-y-1.5">
               <a
-                href="mailto:hello@digexa.agency"
+                href="mailto:infodigexa@gmail.com"
                 className="font-sans text-[15px] sm:text-[15.5px] text-white hover:text-[#FF0000] transition-colors duration-200 inline-block focus:outline-none focus-visible:underline leading-snug"
-                aria-label="Send email to hello@digexa.agency"
+                aria-label="Send email to infodigexa@gmail.com"
               >
-                hello@digexa.agency
+                infodigexa@gmail.com
               </a>
               <a
                 href="tel:+94766414622"

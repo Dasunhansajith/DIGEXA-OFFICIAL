@@ -5,7 +5,7 @@ export const SITE_CONFIG: AgencyConfig = {
   tagline: 'High-Impact Digital Experience & Creative Agency',
   description:
     'We architect boundary-pushing web experiences, immersive brand identities, and high-performance digital products for visionary brands.',
-  email: 'hello@digexa.agency',
+  email: 'infodigexa@gmail.com',
   location: 'Global / Remote',
   established: '2025',
 };
