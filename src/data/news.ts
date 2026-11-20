@@ -18,6 +18,50 @@ export interface NewsArticle {
   };
 }
 
+export const DIGEXA_POS_ARTICLE: NewsArticle = {
+  id: 'digexa-pos-announcement',
+  slug: 'introducing-digexa-pos',
+  title: 'Introducing DIGEXA POS: Smarter Sales. Simpler Business.',
+  category: 'Product Announcement',
+  date: 'November 2026',
+  readTime: '4 min read',
+  excerpt:
+    'A powerful new cloud-based point-of-sale experience is on its way. DIGEXA POS is being developed to help retail businesses manage sales, inventory, customers, and business insights from one modern platform.',
+  image: '/images/cta-business-laptop.jpg',
+  author: 'DIGEXA Product Engineering',
+  content: {
+    intro:
+      'Retail businesses deserve a checkout and inventory management experience that is as fluid, modern, and reliable as the web applications they love. We are thrilled to officially unveil DIGEXA POS — an upcoming cloud-native point-of-sale ecosystem currently under active development.',
+    sections: [
+      {
+        heading: 'Unified Sales & Real-Time Inventory',
+        body: [
+          'Traditional point-of-sale platforms are often fragmented across sluggish proprietary hardware, slow synchronization pipelines, and confusing licensing models. DIGEXA POS is designed from the ground up on modern cloud architecture to eliminate checkout latency and sync inventory in real time across physical stores and digital channels.',
+          'With atomic inventory reservation, instant barcode scanning, and multi-terminal concurrency, retail staff can ring up transactions in seconds while store owners monitor live sales velocity from any connected device.',
+        ],
+      },
+      {
+        heading: 'Cloud Intelligence & Granular Insights',
+        body: [
+          'Beyond rapid transaction handling, DIGEXA POS equips operators with actionable business intelligence. Automated end-of-day reconciliation, staff shift audits, and customer loyalty retention data are generated automatically without manual exports.',
+          'As development progresses toward our upcoming beta release, our team is collaborating closely with select retail partners to fine-tune workflow ergonomics, offline-first resilience, and frictionless payment terminal integrations.',
+        ],
+      },
+      {
+        heading: 'Under Active Development',
+        body: [
+          'DIGEXA POS is currently in private development and testing. We look forward to sharing further milestones, feature deep dives, and early beta access opportunities in the coming months.',
+        ],
+      },
+    ],
+    takeaways: [
+      'Sub-second transaction processing optimized for high-volume retail',
+      'Unified cloud sync bridging physical storefronts and e-commerce catalogs',
+      'Under active development with private beta access arriving soon',
+    ],
+  },
+};
+
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
     id: 'exvo-engineering',
@@ -237,3 +281,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
   },
 ];
 
+export const ALL_NEWS_ARTICLES: NewsArticle[] = [
+  DIGEXA_POS_ARTICLE,
+  ...NEWS_ARTICLES,
+];

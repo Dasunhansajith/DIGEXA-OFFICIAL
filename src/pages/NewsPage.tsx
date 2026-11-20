@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { NEWS_ARTICLES } from '@/data/news';
 import { NewsCard } from '@/components/news/NewsCard';
+import { FeaturedPOSNewsCard } from '@/components/news/FeaturedPOSNewsCard';
 
 export const NewsPage: React.FC = () => {
   useEffect(() => {
@@ -17,7 +18,7 @@ export const NewsPage: React.FC = () => {
         - Subtitle with glowing red dot
         ========================================================================
       */}
-      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-12 text-center mb-12 sm:mb-16 md:mb-20">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-12 text-center mb-10 sm:mb-12 md:mb-14">
         {/* Subtle Eyebrow with Red Dot */}
         <div className="inline-flex items-center justify-center gap-2.5 mb-3 sm:mb-4">
           <span
@@ -37,12 +38,25 @@ export const NewsPage: React.FC = () => {
 
       {/* 
         ========================================================================
-        2. THREE-COLUMN NEWS CARDS GRID
+        2. LARGE FEATURED DIGEXA POS COMING SOON CARD
+        - Inserted directly below LATEST NEWS and directly above existing news grid
+        - Spans full width of the news content container (max-w-[1280px])
+        - Dark charcoal (#101113) with subtle emerald-green gradient and glow
+        - Interactive DIGEXA POS dashboard preview on desktop right / mobile bottom
+        - CTA links to /news/introducing-digexa-pos
+        ========================================================================
+      */}
+      <section className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-12 mb-12 sm:mb-14 lg:mb-16">
+        <FeaturedPOSNewsCard />
+      </section>
+
+      {/* 
+        ========================================================================
+        3. EXISTING THREE-COLUMN NEWS CARDS GRID (UNCHANGED)
+        - EXVO, XCHANGE, TITAN, and all original entries preserved
         - Desktop: Exactly 3 columns (lg:grid-cols-3)
         - Tablet: 2 columns (md:grid-cols-2)
         - Mobile: 1 column (grid-cols-1)
-        - Gaps: 24–28px (gap-6 sm:gap-7 lg:gap-7)
-        - Container: max-w-[1280px] centered
         ========================================================================
       */}
       <main className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-12">

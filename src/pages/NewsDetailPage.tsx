@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar, User, ArrowRight } from 'lucide-react';
-import { NEWS_ARTICLES } from '@/data/news';
+import { ALL_NEWS_ARTICLES } from '@/data/news';
 
 export const NewsDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -11,7 +11,7 @@ export const NewsDetailPage: React.FC = () => {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  const article = NEWS_ARTICLES.find((a) => a.slug === slug || a.id === slug);
+  const article = ALL_NEWS_ARTICLES.find((a) => a.slug === slug || a.id === slug);
 
   if (!article) {
     return (
